@@ -1,4 +1,4 @@
-echo "Day 1 
+ "Day 1 
 JavaScript Introduction
 What is JavaScript and where it runs (Browser, Node)
 Inline, Internal, and External JS
@@ -26,4 +26,4 @@ Operators & Control Structures
 Arithmetic, Logical, Comparison operators
 Conditionals (if, else, switch)
 Ternary Operator
-Loops (for, while, do...while, for...of)" > Day01.md
+Loops (for, while, do...while, for...of)"
