@@ -1,2 +1,2 @@
-# 15-days-challenge
-15 days challenge to learn JS, TS and Angular
+# 24-days-challenge
+24 days challenge to learn JS, TS and Angular
