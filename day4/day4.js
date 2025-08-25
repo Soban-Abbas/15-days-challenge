@@ -116,37 +116,149 @@
 
 
 //3. Bank Account Simulator
-let bankAccount={
- name : "Sara",
- balance: 0,
-deposit: function(money){
-if(money<=0){
-    console.log("Money must be greater than 0")
+// let bankAccount={
+//  name : "Sara",
+//  balance: 0,
+// deposit: function(money){
+// if(money<=0){
+//     console.log("Money must be greater than 0")
     
-}else{
-    this.balance=this.balance+money;
-    return  this.balance;
-}
-},
-withdraw:function(money){
-    if(money<=0 || money>this.balance){
-        console.log("Wrong Amount Entered")
+// }else{
+//     this.balance=this.balance+money;
+//     return  this.balance;
+// }
+// },
+// withdraw:function(money){
+//     if(money<=0 || money>this.balance){
+//         console.log("Wrong Amount Entered")
+//     }
+// else{
+//     console.log(money + "withdraw successfully")
+//     return this.balance=this.balance-money;
+// }
+
+// },
+// checkBalance:function(){
+//     return this.balance;
+// }
+
+// }
+
+// console.log(bankAccount.name);
+// console.log(bankAccount.balance);
+// console.log(bankAccount.deposit(500) +" "+ "deposited successfully");
+
+// console.log(bankAccount.balance);
+// console.log(bankAccount.withdraw(100));
+
+
+
+
+
+
+//4=. Simple Library System
+
+let books=[
+    {
+        title:"Harry Potter",
+        author:"Rowling",
+        available:true,
+        borrowHP:function(){
+          if(this.available===true){
+            console.log("You borrowed Harry Potter")
+            return this.available=false;
+          }else{
+             console.log("Not Available Herry Potter");
+          }
+        },
+        returnHP:function(){
+            
+            console.log("Book Herry Potter return successfully");
+            return this.available=true;
+            
+        }
+
+
+
+    },
+    {
+       
+        title:"Automic Habits",
+        author:"Soban Abbas",
+        available:false,
+        borrowAH:function(){
+          if(this.available===true){
+            console.log("You borrowed Atomic Habits")
+            return this.available=false;
+          }else{
+             console.log("Not Available Atomic Habits");
+          }
+        },
+        returnAH:function(){
+            
+            console.log("Book Atomic Habit return successfully");
+            return this.available=true;
+            
+        }
+
+    },
+       {
+       
+        title:"Rich Dad Poor Dad",
+        author:"Soban",
+        available:false,
+        borrowRDPD:function(){
+          if(this.available===true){
+            console.log("You borrowed Rich Dad Poor Dad")
+            return this.available=false;
+          }else{
+             console.log("Not Available Rich Dad Poor Dad");
+          }
+        },
+        returnRDPD:function(){
+            
+            console.log("Book Rich Dad Poor Dad return successfully");
+            return this.available=true;
+            
+        }
+
+    },
+       {
+       
+        title:"JavaScript",
+        author:" Abbas",
+        available:true,
+        borrowJS:function(){
+          if(this.available===true){
+            console.log("You borrowed JS")
+            return this.available=false;
+          }else{
+             console.log("Not Available JS");
+          }
+        },
+        returnJS:function(){
+            
+            console.log("Book JS return successfully");
+            return this.available=true;
+            
+        }
+
     }
-else{
-    console.log(money + "withdraw successfully")
-    return this.balance=this.balance-money;
+]
+
+
+for(let book of books){
+    console.log(book);
 }
 
-},
-checkBalance:function(){
-    return this.balance;
+let availabletrue=books.filter(function(a){
+    return  a.available===true;
+})
+for(let bok of availabletrue){
+    console.log(bok);
 }
+books[3].borrowJS();
+books[2].borrowRDPD();
+books[2].returnRDPD();
 
-}
-
-console.log(bankAccount.name);
-console.log(bankAccount.balance);
-console.log(bankAccount.deposit(500) +" "+ "deposited successfully");
-
-console.log(bankAccount.balance);
-console.log(bankAccount.withdraw(100));
+books[2].borrowRDPD();
