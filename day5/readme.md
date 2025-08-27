@@ -1,4 +1,4 @@
-#Day-5 26-8-2025
+# Day-5 26-8-2025
 ## Topics to cover
 Destructuring
 Spread/Rest Operators

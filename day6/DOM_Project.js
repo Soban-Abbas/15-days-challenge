@@ -63,3 +63,20 @@ let list=document.getElementById("list").addEventListener("click",function(e){
       e.target.classList.toggle("done");
     }
 })
+
+
+//last
+//stopPropagation Example – Nested Clicks
+
+
+
+let lst=document.getElementById("lst").addEventListener("click",function(e){
+    console.log("div is clicked")
+})
+
+
+
+let btnlst=document.getElementById("btnlst").addEventListener("click",function(e){
+   e.stopPropagation();//check console by commit out e.stopPropagation(); and by activing this e.stopPropagation(); also
+    console.log("btn  is clicked")
+})
