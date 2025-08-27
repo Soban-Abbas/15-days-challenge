@@ -8,3 +8,7 @@
 .Yellow{
     background: greenyellow;
 }
+.done {
+  text-decoration: line-through; /* crosses out text */
+  color: gray;
+}

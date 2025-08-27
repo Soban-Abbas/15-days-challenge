@@ -38,3 +38,28 @@ let select=document.getElementById("select").addEventListener("change",function(
         return false;
     }
 })
+
+//prevent form submitsion
+let message=document.getElementById("message");
+let form=document.getElementById("myform")
+form.addEventListener("submit",function(event){
+    event.preventDefault();
+    let valid=true;
+    
+    if(message.value===""){
+        let errorMessage=document.getElementById("emess");
+        errorMessage.textContent="PLease write message ";
+        valid=false;
+    }else {   form.reset();
+        alert("form submitted successfuly")}
+      
+    }
+    
+)
+
+//todolist
+let list=document.getElementById("list").addEventListener("click",function(e){
+    if(e.target.tagName==="LI"){
+      e.target.classList.toggle("done");
+    }
+})
