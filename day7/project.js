@@ -39,3 +39,21 @@ else if(e.target.innerText==="Increase"){
 
     }
 })
+//Multiplication Table Generator
+  let inputValue=document.getElementById("number");
+   let message1=document.getElementById("message");
+let button=document.getElementById("btn1");
+button.addEventListener("click",function(e){
+ 
+    if(inputValue.value==="" || inputValue.value==="0" || Number(inputValue.value)>10){
+       message1.innerText="Please Enter correct b/w 0 and 11 ";
+    }else if(Number(inputValue.value)>0 || Number(inputValue.value)<=10){
+
+        for(let i=1;i<=10;i++){
+           
+           message1.innerHTML+=`<br>${inputValue.value} * ${i}=${inputValue.value*i}<br>`
+        }
+
+    }
+
+})
