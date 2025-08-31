@@ -1,26 +1,39 @@
-let quotes = [
-  "The best way to get started is to quit talking and begin doing.",
-  "Don’t let yesterday take up too much of today.",
-  "It’s not whether you get knocked down, it’s whether you get up.",
-  "If you are working on something exciting, it will keep you motivated.",
-  "Success is not in what you have, but who you are.",
-  "The harder you work for something, the greater you’ll feel when you achieve it.",
-  "Dream bigger. Do bigger.",
-  "Don’t watch the clock; do what it does. Keep going.",
-  "Great things never come from comfort zones.",
-  "Push yourself, because no one else is going to do it for you."
-];
-let showQuote=document.getElementById("quote");
+let booksArray = [];
+let message = document.createElement("span");
+let available_unordered_list = document.getElementById("available");
+let inputBooks = document.getElementById("addBook");
+inputBooks.addEventListener("input", function (e) {
+  addBtn.disabled = false;
+  if (inputBooks.value.length > 15) {
+    message.innerText = "Please Enter Correct value";
+    addBtn.disabled = true;
+  } else message.innerText = "";
+});
+let span1 = document.getElementById("span1");
+span1.appendChild(message);
 
-let btn=document.getElementById("btn");
-btn.addEventListener("click",function(e){
+let addBtn = document.getElementById("addbtn");
 
-    do{
-        console.log(quotes[0]);
-        showQuote.innerHTML=quotes[0];
-    }while(0>1)
+addBtn.addEventListener("click", function (e) {
+  if (inputBooks.value === "" || inputBooks.value.length > 15) {
+    message.innerText = "Please Enter Correct value";
+  } else {
+    let bookObj = {
+      book_Id: Date.now(),
+      book_Name: inputBooks.value,
+      book_Availability: true,
+    };
 
-    quotes.push(quotes[0])
-        quotes.shift();
-console.log(quotes);
-})
+    booksArray.push(bookObj);
+
+    let listBook = document.createElement("li");
+    listBook.dataset.id = bookObj.book_Id;
+
+    listBook.innerText = ` Book-id =${
+      bookObj.book_Id
+    } ${"\u00A0\u00A0\u00A0"} Book-Title=${
+      bookObj.book_Name
+    }  ${"\u00A0\u00A0\u00A0"} Book-Availablity=${bookObj.book_Availability}`;
+    available_unordered_list.appendChild(listBook);
+  }
+});
