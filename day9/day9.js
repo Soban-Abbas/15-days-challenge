@@ -68,3 +68,21 @@ addBtn.addEventListener("click", function () {
   }
 });
 
+let searchInput = document.getElementById("searchBook");   // get input
+let myList = document.getElementById("available");        // get <ul>
+let items = myList.getElementsByTagName("li");         // get all <li>
+
+searchInput.addEventListener("input", function () {
+  let query = searchInput.value.toLowerCase();   // text typed by user
+
+  // loop through all <li>
+  for (let i = 0; i < items.length; i++) {
+    let text = items[i].innerText.toLowerCase(); // content of <li>
+
+    if (text.includes(query)) {
+      items[i].style.display = "";  // show if it matches
+    } else {
+      items[i].style.display = "none"; // hide if it doesn't match
+    }
+  }
+});
