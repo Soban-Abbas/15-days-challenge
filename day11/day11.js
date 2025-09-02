@@ -1,16 +1,19 @@
-let sentenceArray = ["I", "am", "learning", "JavaScript", "every", "day"];
+let usernumber=prompt("Enter Number");
+let count=document.getElementById("count");
+let number = Number(usernumber);
+let id=setInterval(function(
+){
+
+  
+  count.innerText=number;
+  number--;
+  if(number===0){
+     count.innerText="";
+    clearInterval(id);
+   
+  }
 
 
-let heading=document.querySelector("h2");
-
-let i=0;
-let id=setInterval(function(){
-
-heading.innerText=`${heading.innerText} ${sentenceArray[i]}`;
-i++;
-if(i>=sentenceArray.length){
-  clearInterval(id);
-}
 
 
 },1000)
