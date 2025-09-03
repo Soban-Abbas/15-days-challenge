@@ -66,3 +66,26 @@ remaingtime();//showing time;
 startBtn.addEventListener("click",start);
 stopBtn.addEventListener("click",stop);
 resetBtn.addEventListener("click",reset);
+
+
+function changeTheme(){
+
+    let value=localStorage.getItem("theme");
+if(value==="dark"){
+    document.body.classList.add("dark");
+}else
+{
+    document.body.classList.remove("dark");
+}
+
+
+}
+
+changeTheme();
+
+
+let themeBtn=document.getElementById("theme");
+themeBtn.addEventListener("click",function(e){
+    let value=document.body.classList.toggle("dark");
+    localStorage.setItem("theme",value?"dark":"light");
+})
